@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Add Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Add Bootstrap JS (optional, for certain features) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.min.js"></script>
+
+    <title>Hotel Oasis</title>
+    <style>
+        /* Reset some default styles */
+        body, h1, h2, h3, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            color:white;
+            line-height: 1.6;
+        }
+
+        
+    .container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 15px 20px; /* Adjust padding as needed */
+     /* background-color: #ffffff;  */
+    /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);   */
+    /* color: #333333;   */
+}
+
+.container a {
+    color: white; /* Set link color to orange (#f39c12) */
+     text-decoration:double; /*Remove underlines from links */
+    transition: color 0.3s; /* Add a color transition effect on links */
+    /* background-color:rgba(96, 158, 155, 0.895); */
+    border-radius: 1px;
+}
+
+.container a:hover {
+    color:wheat; /* Change link color to a different shade when hovered (#e74c3c) */
+}
+
+
+
+        
+
+header {
+    background-color:black; /* Light gray background color */
+    padding: 20px 0;
+}
+
+nav {
+    text-align: center;
+}
+
+nav h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    /* background-color: #007BFF; */
+    border-radius: 3px;
+    /* background-color:rgba(96, 158, 155, 0.895); */
+    
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color:rgb(126, 79, 171); /* Light gray text color */
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #333; /* Slightly darker text color on hover */
+}
+
+
+        /* Hero Section */
+        #hero {
+    background-image: url(assets/photo-1561501900-3701fa6a0864.jpg);
+    background-size:1050px;
+    background-position:center;
+    color: #fff;
+    text-align:center;
+    padding: 200px ;
+}
+
+
+#hero h2 {
+    font-size: 48px;
+    margin-top: 100px; /* Adjust margin to move it down */
+    margin-bottom: -10px; /* Adjust margin to fine-tune the position */
+}
+
+#hero p {
+    font-size: 28px;
+    margin-top: 10px; /* Adjust margin to move it down */
+    margin-bottom: 20px;
+}
+
+        .btn {
+            background-color:rgba(96, 158, 155, 0.895);
+            color: #fff;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: background-color 0.5s;
+        }
+
+        .btn:hover {
+            background-color:coral;
+        }
+
+        /* About Section */
+        #about {
+            background-color: black;
+            padding: 70px 0;
+            text-align: center;
+        }
+
+        #about h2 {
+            font-size: 36px;
+            margin-bottom: 25px;
+            color: white;
+        }
+
+        #about p {
+            font-size: 20px;
+            color:white;
+        }
+
+        /* Rooms Section */
+        #rooms {
+            background-color: #f9f9f9;
+            padding: 100px 0;
+            text-align: center;
+            
+        }
+
+        .room-card {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .room-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .room-card img {
+            max-width: 100%;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .room-card h3 {
+            font-size: 28px;
+            margin: 20px 0;
+            color: #333;
+        }
+
+        .room-card p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        /* Facilities Section */
+        #facilities {
+            background-color: #fff;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        #facilities h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .facility-card {
+            background-color: #f7f7f7;
+            border-radius: 5px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .facility-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .facility-card img {
+            max-width: 100%;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .facility-card h3 {
+            font-size: 28px;
+            margin: 20px 0;
+            color: #333;
+        }
+
+        .facility-card p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color:rgba(96, 158, 155, 0.895);           
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        #contact h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        #contact p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .btn-contact {
+            background-color:grey;
+            color: #fff;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-contact:hover {
+            background-color: #003c80;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer p {
+            font-size: 16px;
+        }
+        
+        /* Your existing styles go here */
+
+       
+    </style>
+    </style>
+</head>
+<body>
+     <header>
+        <nav>
+            <div class="container">
+                <h1>Hotel Oasis</h1>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#rooms">Rooms</a></li>
+                    <li><a href="#facilities">Facilities</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header> 
+   
+    
+    
+    <section id="hero">
+        <div class="container">
+            <h2>Welcome to Hotel Oasis</h2>
+            <p>Your perfect destination</p>
+            <a href="#rooms" class="btn">View Rooms</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Experience luxury and comfort at our beachfront paradise. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique elit a facilisis. Integer vitae urna nec lectus malesuada bibendum. Sed in velit vel velit feugiat dictum vel id elit.</p>
+        </div>
+    </section>
+
+    
+    <section id="rooms">
+        <div class="container">
+            <h2>Our Rooms</h2>
+            <div class="room-card">
+               <img src="assets/four-seasons-hotel-lion-palace-st-petersburg-200004-1 (1).webp" alt="">
+                <h3>Deluxe Room</h3>
+                <p>Starting at $150/night</p>
+            </div>
+            <div class="room-card">
+               <img src="assets/expediav2-137100-720bb6-164780.jpg">
+                <h3>Suite</h3>
+                <p>Starting at $250/night</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="facilities">
+        <div class="container">
+            <h2>Facilities</h2>
+            <div class="facility-card">
+                <img src="assets/Gym.jpg" alt="Gym">
+                <h3>Gym</h3>
+                <p>Stay fit during your stay with our state-of-the-art gym.</p>
+            </div>
+            <div class="facility-card">
+                <img src="assets/the-berkeley-rooftop-pool-one.jpg" alt="Swimming Pool">
+                <h3>Swimming Pool</h3>
+                <p>Relax by our beautiful swimming pool with a view of the ocean.</p>
+            </div>
+            <div class="facility-card">
+                <img src="assets/Optimized-pexels-quark-studio-3201922.webp" alt="Restaurant">
+                <h3>Restaurant</h3>
+                <p>Enjoy delicious meals at our seaside restaurant.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Have questions or ready to book your stay? Contact us today!</p>
+            <a href="mailto:info@hotel-oasis.com" class="btn-contact">Email Us</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Hotel Oasis</p>
+        </div>
+    </footer>
+</body>
+</html>
