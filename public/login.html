@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.css"> <!-- Link to the separated style.css file -->
+
+    <link rel="stylesheet" href="css/custom-style.css"> <!-- Add a new CSS file for custom styles -->
+</head>
+
+<body>
+<script>
+    // Check if the query parameter is present
+    const queryParams = new URLSearchParams(window.location.search);
+    const userType = queryParams.get('userType');
+
+    if (userType === 'regular') {
+        // Display a message for regular users trying to access admin dashboard
+        alert('You do not have access to the admin dashboard.');
+    }
+</script>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white"> <!-- Add background color to the navbar -->
+    <a class="navbar-brand" href="#">Hotel Oasis</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto"> <!-- Align the navbar items to the right -->
+            <li class="nav-item">
+                <a class="nav-link" href="/signup">Signup</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/dashboard">Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/login">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/logout">Logout</a> <!-- Add "active" class manually -->
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+<div class="container">
+    <h2>Login Form</h2>
+    <form action="" name="login" method="post">
+        <label for="loginUsername">Username</label>
+        <input type="text" name="username" id="loginUsername" value="aman" placeholder="Enter your username">
+
+        <label for="loginPassword">Password</label>
+        <input type="password" name="password" id="loginPassword" value="aman" placeholder="Enter your password">
+
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+</body>
+
+</html>
