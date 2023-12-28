@@ -1,0 +1,29 @@
+<!-- /views/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room List</title>
+</head>
+<body>
+<h1>Room List</h1>
+<ul>
+    <% rooms.forEach(room => { %>
+        <li>
+            <%= room.name %> - Capacity: <%= room.capacity %>
+            (<a href="/delete/<%= room._id %>">Delete</a>)
+            <a href="/update/<%= room._id %>">Update</a>
+        </li>
+    <% }); %>
+</ul>
+<form action="/add" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="capacity">Capacity:</label>
+    <input type="number" id="capacity" name="capacity" required>
+    <button type="submit">Add Room</button>
+</form>
+</body>
+</html>
