@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<style>
+    body{
+        background-image:url("images/vail-resorts-lake-canoe-paddleboat_56f1e9e7-f0ae-5102-065b4a224147bcf4.jpg");
+    }
+    /* /css/custom-style.css */
+
+    /* Add styles for the signup form */
+
+    navbar-nav .nav-link {
+
+        transition: color 0.3s; /* Add smooth transition for color change */
+    }
+
+    .navbar-nav .nav-link:hover {
+
+        background-color: #3498db;
+    }
+
+    .navbar-nav .nav-link.active {
+        background-color:#3498db; /* Set text color when the link is active/clicked */
+    }
+
+    /* /css/custom-style.css */
+
+    /* Add styles for the signup form */
+    .container {
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 8px;
+        padding: 30px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        margin: 50px auto;
+    }
+
+    h2 {
+        text-align: center;
+        color: #3498db; /* Heading color */
+    }
+
+    form label {
+        color: #333;
+    }
+
+    form input {
+        height: 40px;
+        line-height: 25px;
+        background: #ecf0f1; /* Input background color */
+        color: #333;
+        padding: 0 15px;
+        box-sizing: border-box;
+        border: 1px solid #bdc3c7; /* Input border color */
+        border-radius: 4px;
+        width: 100%;
+        margin-bottom: 15px;
+        transition: border-color 0.3s, background-color 0.3s;
+    }
+
+    form input:focus {
+        border-color: #3498db; /* Highlight border color on focus */
+        background-color: #fff; /* Highlight background color on focus */
+    }
+
+    form button {
+        height: 40px;
+        line-height: 35px;
+        background: #3498db; /* Button color */
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        width: 100%;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    form button:hover {
+        background: #2980b9; /* Button color on hover */
+    }
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white"> <!-- Add background color to the navbar -->
+    <a class="navbar-brand" href="#">Hotel Oasis</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto"> <!-- Align the navbar items to the right -->
+            <li class="nav-item">
+                <a class="nav-link" href="/signup">Signup</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/dashboard">Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/login">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <h2>Signup Form</h2>
+    <form action="" name="signup" method="post">
+        <label for="signupUsername">Username</label>
+        <input type="text" name="username" id="signupUsername" value="" placeholder="Enter your username">
+
+        <label for="signupEmail">Email</label>
+        <input type="email" name="email" id="signupEmail" value="" placeholder="Enter your email">
+
+        <label for="signupPassword">Password</label>
+        <input type="password" name="password" id="signupPassword" value="" placeholder="Enter your password">
+
+        <button type="submit">Signup</button>
+    </form>
+</div>
+
+</body>
+
+</html>
+
+
+</body>
+</html>

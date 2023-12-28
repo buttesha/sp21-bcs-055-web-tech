@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms CRUD</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+            background-image: url("images/51299809.jpg");
+
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 40%;
+            height: 600px;
+        }
+
+        .table th, .table td {
+            text-align: center;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+        }
+
+        h1, h2 {
+            color: #007bff;
+        }
+
+        form {
+            margin-top: 30px; /* Adjusted margin-top value */
+        }
+        .btn {
+            background: #007bff;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="mb-4">Rooms List</h1>
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Room Name</th>
+            <th scope="col">Capacity</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% rooms.forEach((room, index) => { %>
+            <tr>
+                <th scope="row"><%= index + 1 %></th>
+                <td><%= room.name %></td>
+                <td><%= room.capacity %></td>
+                <td>
+                    <div class="btn-group">
+                        <a href="/update/<%= room._id %>" class="btn btn-info btn-sm">Update</a>
+                        <a href="/delete/<%= room._id %>" class="btn btn-danger btn-sm">Delete</a>
+                    </div>
+                </td>
+            </tr>
+        <% }); %>
+        </tbody>
+    </table>
+
+    <h2 class="mt-4">Add a New Room</h2>
+    <form action="/add" method="post">
+        <div class="form-row">
+            <div class="col-md-6 mb-3">
+                <label for="name">Room Name:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="capacity">Capacity:</label>
+                <input type="number" class="form-control" id="capacity" name="capacity" required>
+            </div>
+            <div class="col-md-3 mb-3">
+                <button type="submit" class="btn btn-primary btn-block">Add Room</button>
+          <br>
+                <a href="http://localhost:4000/dashboard" class="btn btn-secondary">Back to Dashboard</a>
+
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- Add Bootstrap JS and Popper.js scripts -->
+
+</body>
+</html>

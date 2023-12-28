@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Collection</title>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        html {
+            padding: 0 1em;
+            font-family: Calibri, sans-serif;
+        }
+
+        body {
+            margin: auto;
+            max-width: 42em;
+        }
+
+        img {
+            max-width: 50%;
+        }
+
+        .image-left, .image-right {
+            margin: 1em 0;
+        }
+
+        @media (min-width: 20em) {
+            .image-left, .image-right {
+                display: flex;
+                align-items: center;
+            }
+
+            .image-left img {
+                margin-right: 1em;
+                float: left; /* fallback */
+            }
+
+            .image-right img {
+                order: 1;
+                margin-left: 1em;
+                float: right; /* fallback */
+            }
+
+            /* clearfix for fallback */
+            .image-left::after,
+            .image-right::after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+        }
+
+        @media (min-width: 30em) {
+            .image-left img, .image-right img {
+                flex-shrink: 0;
+            }
+        }
+
+        .restaurant {
+            display: block;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="input-group mb-3">
+        <input type="text" id="filterInput" class="form-control" placeholder="Search for restaurants">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" id="searchButton">Search</button>
+        </div>
+    </div>
+<h1>Restaurant Collection</h1>
+
+<div class="">
+    <div class="row">
+        <!-- Fast Food Restaurants -->
+        <div class="col-md-12">
+            <div class="restaurant">
+                <img src="images/Ditas%20Interior%20Image%20-%201%20(8).jpg">
+                <h2>Fast Food Haven 1 - Burger Paradise</h2>
+                <p>Indulge in mouth-watering burgers, crispy fries, and refreshing shakes. Experience a paradise of flavors in every bite.</p>
+            </div>
+
+            <div class="restaurant">
+                <img src="images/Seafood-Gastro-1.width-768.jpg" alt="Fast Food Haven 2">
+                <h2>Fast Food Haven 2 - Sizzling Delights</h2>
+                <p>Savor the sizzling delights at Fast Food Haven 2. Our menu features a variety of flavorful options to tantalize your taste buds.</p>
+            </div>
+
+            <div class="restaurant">
+                <img src="images/Restaurant_Näsinneula.jpg">
+                <h2>Fast Food Haven 3 - Crispy Goodness</h2>
+                <p>Experience the crispy goodness at Fast Food Haven 3. Enjoy a delightful combination of crunchy textures and rich flavors.</p>
+            </div>
+        </div>
+
+        <!-- Desi Delights Restaurants -->
+        <div class="col-md-12">
+            <div class="restaurant">
+                <img src="images/content-img-1@2x.4eaded1.340e454a6e3c28a3464ac7382d7bdd62.jpg" alt="Desi Delights 1">
+                <h2>Desi Delights 1 - Spice Kingdom</h2>
+                <p>Embark on a culinary journey with authentic desi meals. From flavorful curries to savory kebabs, savor the essence of local cuisine.</p>
+            </div>
+
+            <div class="restaurant">
+                <img src="images/Tambourine_Room_by_Tristan_Brandt_Dining_Room_1_Photo_Credit_Michael_Pisarri.143.jpg" alt="Desi Delights 2">
+                <h2>Desi Delights 2 - Aromatic Delicacies</h2>
+                <p>Delight your senses with aromatic delicacies at Desi Delights 2. Our menu offers a blend of spices that create a symphony of flavors.</p>
+            </div>
+
+            <div class="restaurant">
+                <img src="images/Barbieri_-_ViaSophia25668.jpg" alt="Desi Delights 3">
+                <h2>Desi Delights 3 - Culinary Treasures</h2>
+                <p>Explore culinary treasures at Desi Delights 3. Immerse yourself in a rich tapestry of flavors inspired by traditional recipes.</p>
+            </div>
+        </div>
+
+        <!-- Vegetarian Bliss Restaurants -->
+        <div class="col-md-12">
+            <div class="restaurant">
+                <img src="images/pexels-photo-262978.webp" alt="Vegetarian Bliss 1">
+                <h2>Vegetarian Bliss 1 - Garden Fresh Delights</h2>
+                <p>Explore the delightful world of vegetarian cuisine. Our menu showcases fresh and wholesome vegetarian dishes for a burst of flavors.</p>
+            </div>
+
+            <div class="restaurant">
+                <img src="images/restaurant-interior-design-ideas-thumbnail.jpg" alt="Vegetarian Bliss 2">
+                <h2>Vegetarian Bliss 2 - Green Delicacies</h2>
+                <p>Indulge in the green delicacies at Vegetarian Bliss 2. Experience a medley of fresh and healthy options that cater to your taste preferences.</p>
+            </div>
+
+            <div class="restaurant">
+                <img src="images/welcome-to-desi-vibes.jpg" alt="Vegetarian Bliss 2">
+                <h2>Vegetarian Bliss 3 - Flavorful Plant-Based Choices</h2>
+                <p>Discover flavorful plant-based choices at Vegetarian Bliss 3. Our menu is crafted to provide a delightful dining experience with every dish.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and Popper.js CDN -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    // JavaScript for filtering
+    document.getElementById('filterInput').addEventListener('input', function () {
+        const filterValue = this.value.toLowerCase();
+        const restaurantNames = document.querySelectorAll('.restaurant h2');
+
+        restaurantNames.forEach(function (name) {
+            const restaurantName = name.textContent.toLowerCase();
+            const isVisible = restaurantName.includes(filterValue);
+            const restaurant = name.closest('.restaurant');
+            restaurant.style.display = isVisible ? 'block' : 'none';
+        });
+    });
+</script>
+
+</body>
+</html>
